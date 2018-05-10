@@ -1,7 +1,8 @@
 {
-  "name": "hello-world",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vuex-pathify-simple-demo",
+  "description": "Vuex Pathify - Simple Demo",
+  "version": "1.0.0",
+  "author": "Dave Stewart",
   "scripts": {
     "dev": "vue-cli-service serve --open",
     "build": "vue-cli-service build",

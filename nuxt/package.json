@@ -1,5 +1,8 @@
 {
   "name": "vuex-pathify-nuxt-demo",
+  "description": "Vuex Pathify - Nuxt Demo",
+  "version": "1.0.0",
+  "author": "Dave Stewart",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
