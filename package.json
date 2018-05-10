@@ -1,0 +1,27 @@
+{
+  "name": "vuex-pathify-demos",
+  "version": "1.0.0",
+  "description": "A set of demos for the Vuex Pathify plugin",
+  "author": "Dave Stewart",
+  "scripts": {
+    "init": "cd simple && npm install && cd ../main && npm install && cd ../nuxt && npm install && cd ..",
+    "simple": "cd simple && npm run dev",
+    "main": "cd main && npm run dev",
+    "nuxt": "cd nuxt && npm run dev"
+  },
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "https://github.com/davestewart/vuex-pathify-demos#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davestewart/vuex-pathify-demos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davestewart/vuex-pathify-demos/issues"
+  },
+  "keywords": [
+    "vuex",
+    "pathify",
+    "demo"
+  ]
+}
