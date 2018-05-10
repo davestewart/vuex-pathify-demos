@@ -35,7 +35,7 @@ let updateTitle = function () {
   const route = location.hash
   const link = document.querySelector(`a[href="${route}"]`)
   if (link) {
-    document.title = 'Vuex Pathify - Feature Demo / ' + link.innerText
+    document.title = 'Vuex Pathify - Main Demo / ' + link.innerText
   }
 }
 router.afterEach(updateTitle)
