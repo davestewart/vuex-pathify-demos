@@ -1,3 +1,5 @@
+![splash](https://raw.githubusercontent.com/davestewart/vuex-pathify/master/docs/assets/img/readme/splash-github.png)
+
 # Vuex Pathify Demos
 
 ## Introduction
