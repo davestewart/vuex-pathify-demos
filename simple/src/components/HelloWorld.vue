@@ -8,7 +8,7 @@
 
 <script>
 // import helper
-import { sync } from "vuex-pathify";
+import { sync } from 'vuex-pathify'
 
 // component definition
 const component = {
@@ -16,11 +16,11 @@ const component = {
     // sync helper, uses wildcard to sync ALL state + getters on root
     ...sync('*')
   }
-};
+}
 
 // check the CodeSandbox console...
-console.log("computed:", component.computed);
+console.log('computed:', component.computed)
 
 // export component
-export default component;
+export default component
 </script>

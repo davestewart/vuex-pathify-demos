@@ -19,11 +19,11 @@
 import HelloWorld from './components/HelloWorld'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     HelloWorld
   }
-};
+}
 </script>
 
 <style>
@@ -67,6 +67,6 @@ a, a:link {
 }
 
 a:hover {
-  text-decoration: underline;  
+  text-decoration: underline;
 }
 </style>

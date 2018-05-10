@@ -20,6 +20,6 @@ export default new Vuex.Store({
   ],
 
   // mix in store data
-  ...data,
+  ...data
 
 })

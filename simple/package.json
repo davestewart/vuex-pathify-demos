@@ -27,8 +27,6 @@
       "vue": "vue/dist/vue.esm.js"
     }
   },
-  "webpack": {
-  },
   "babel": {
     "presets": [
       "@vue/app"

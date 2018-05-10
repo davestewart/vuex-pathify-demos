@@ -4,7 +4,7 @@ import { make } from 'vuex-pathify'
 // state
 const state = {
   greeting: 'Hello',
-  name: 'World',
+  name: 'World'
 }
 
 // mutations - helper builds all commits
