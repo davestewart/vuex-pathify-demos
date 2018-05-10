@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Dave Stewart",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt & open http://localhost:3000",
     "build": "nuxt build",
     "start": "nuxt start"
   },
