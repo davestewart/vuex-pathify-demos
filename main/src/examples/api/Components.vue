@@ -14,12 +14,15 @@
 
     <div class="content">
 
-      <p>Store:</p>
-      <pre>{{ store }}</pre>
+      <p>Module:</p>
+      <pre>{{ module }}</pre>
 
-      <p>Sync property: <ui-input v-model.number="value"/></p>
-      <p>Sync sub-property: <ui-input v-model="sub"/></p>
-      <p>Sync nested property: <ui-input v-model="nested"/></p>
+      <p>Sync "value": <ui-input type="number" min="0" :max="module.string.length - 1" v-model.number="value"/></p>
+      <p>Sync "object.value": <ui-input v-model="sub"/></p>
+      <p>Sync "object.a.b.c": <ui-input v-model="nested"/></p>
+
+      <p>Result of getter function "substr"</p>
+      <pre>{{ getter(value) }}</pre>
 
       <p>Nested syntax:</p>
       <pre>{{ { sub, nested } }} </pre>
@@ -43,10 +46,10 @@
     computed: {
 
       // single property
-      store: get('module'),
+      module: get('module'),
 
-      // accessor priority
-      string: get('module/string'),
+      // function getter
+      getter: get('module/substr'),
 
       // nested property syntax
       sub: sync('module/object@value'),

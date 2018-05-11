@@ -7,9 +7,9 @@ import { make } from 'vuex-pathify'
 
 const state = {
 
-  value: 456,
+  value: 0,
 
-  string: 'some value',
+  string: 'the quick brown fox jumped over the lazy dog',
 
   object: {
     value: 'some other value',
@@ -21,6 +21,15 @@ const state = {
   },
 }
 
+const getters = {
+
+  substr (state) {
+    return function (start = 0) {
+      return state.string.substr(start)
+    }
+  }
+}
+
 const mutations = {
   ...make.mutations(state),
 }
@@ -28,5 +37,6 @@ const mutations = {
 export default {
   namespaced: true,
   state,
+  getters,
   mutations,
 }

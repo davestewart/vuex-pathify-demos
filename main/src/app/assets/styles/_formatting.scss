@@ -13,8 +13,13 @@ body {
 //  HEADINGS
 // ---------------------------------------------------------------------------------------------------------------------
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: normal;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Merriweather;
+  margin-top: 2em;
 }
 
 .content {
@@ -24,30 +29,18 @@ h1, h2 {
     -webkit-font-smoothing: auto;
   }
 
-  p,
-  ol,
-  ul {
-    line-height: 1.6rem;
-    word-spacing: .05rem;
+  h3 {
+    margin-top: 2em
   }
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: Merriweather;
-  margin-top: 2em;
-}
-
-.indent, li {
-  h1, h2, h3, h4, h5 {
-    margin-top: 1.5em;
+.content > {
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child {
+    margin-top: 0;
   }
-}
-
-.content > h1:first-child,
-.content > h2:first-child,
-.content > h3:first-child,
-.content > h4:first-child {
-  margin-top: 0;
 }
 
 h2 span {
@@ -62,10 +55,26 @@ h2 span {
 }
 
 
+// navigation
+.indent, li {
+  h1, h2, h3, h4, h5 {
+    margin-top: 1.5em;
+  }
+}
+
 // ---------------------------------------------------------------------------------------------------------------------
-//  LISTS
+//  FORMATTING
 // ---------------------------------------------------------------------------------------------------------------------
 
+.content {
+
+  p,
+  ol,
+  ul {
+    line-height: 1.6rem;
+    word-spacing: .05rem;
+  }
+}
 
 ul {
   list-style-type: none;

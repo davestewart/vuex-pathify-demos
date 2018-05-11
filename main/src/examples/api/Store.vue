@@ -15,7 +15,10 @@
     <div class="content">
       <p>Store:</p>
       <pre>state: {{ state }}</pre>
-      <pre>total: {{ total }}</pre>
+
+      <p>Derived values:</p>
+      <pre>total (automatic) : {{ total }}</pre>
+      <pre>square (manual) : {{ square }}</pre>
 
       <p>Status:</p>
       <pre>{{ status }}</pre>
@@ -24,7 +27,8 @@
       <ul>
         <li><a href="#" @click.prevent="setFoo">Set foo</a></li>
         <li><a href="#" @click.prevent="setBar">Set bar</a></li>
-        <li><a href="#" @click.prevent="setBaz">Set baz</a></li>
+        <li><a href="#" @click.prevent="setBaz">Set baz.value</a></li>
+        <li><a href="#" @click.prevent="getSquared">Get square of total (via function getter)</a></li>
         <li><a href="#" @click.prevent="dispatchFoo">set foo (via action)</a></li>
         <li><a href="#" @click.prevent="incrementFoo">Increment foo</a></li>
         <li><a href="#" @click.prevent="loadFoo">Load foo</a></li>
@@ -48,6 +52,9 @@
       return {
         // pull the state in directly (this stays reactive)
         state: this.$store.state.helpers,
+
+        // local data
+        square: '...',
 
         // local status
         status: 'Waiting for input...',
@@ -98,6 +105,12 @@
           .set('helpers/loadFoo!')
           // loadFoo returns a promise, so we can wait for it
           .then(() => this.status = 'Foo loaded!')
+      },
+
+      getSquared () {
+        // call Vuex getter * function * by passing values
+        this.square = this.$store.get('helpers/multiply', this.total),
+        this.status = 'Get square of total (via pathify get)'
       },
 
       clear () {

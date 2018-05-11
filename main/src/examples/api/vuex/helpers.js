@@ -20,6 +20,13 @@ const getters = {
   // additional total function
   total (state) {
     return state.foo + state.bar + state.baz.value
+  },
+
+  // function getter
+  multiply (state, getters) {
+    return function (factor) {
+      return getters.total * factor
+    }
   }
 }
 

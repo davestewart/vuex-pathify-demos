@@ -48,7 +48,7 @@
       prop      : get('value'),
 
       // module values
-      module    : get('module/value'),
+      module    : get('module/string'),
       subProp   : get('module/object@value'),
       deepProp  : get('module/object@a.b.c'),
 
