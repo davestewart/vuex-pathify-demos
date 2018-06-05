@@ -7,20 +7,15 @@
 </template>
 
 <script>
-// import helper
 import { sync } from 'vuex-pathify'
 
-// component definition
 const component = {
   computed: {
-    // sync helper, uses wildcard to sync ALL state + getters on root
     ...sync('*')
   }
 }
 
-// check the CodeSandbox console...
 console.log('computed:', component.computed)
 
-// export component
 export default component
 </script>
