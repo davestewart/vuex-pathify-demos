@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "author": "Dave Stewart",
   "scripts": {
-    "dev": "nuxt & open http://localhost:3000",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start"
   },
   "dependencies": {
     "nuxt": "^1.4.0",
-    "vuex-pathify": "^1.0.5"
+    "vuex-pathify": "^1.0.8"
   },
   "devDependencies": {
     "node-sass": "^4.9.0",
