@@ -3,7 +3,9 @@
 
     <div id="app">
       <img width="250" src="https://raw.githubusercontent.com/davestewart/vuex-pathify/develop/docs/assets/img/logos/logo.png">
-      <hello-world/>
+      <h1>{{ greeting }} {{ name }}</h1>
+      <input v-model="greeting" placeholder="Greeting">
+      <input v-model="name" placeholder="Name">
     </div>
 
     <p class="info">
@@ -16,12 +18,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import { sync } from 'vuex-pathify'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  computed: {
+    // @see https://davestewart.github.io/vuex-pathify/#/api/component
+    ...sync('*')
   }
 }
 </script>

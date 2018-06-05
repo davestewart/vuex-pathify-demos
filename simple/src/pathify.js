@@ -1,5 +1,7 @@
 import pathify from 'vuex-pathify'
-export default pathify
 
-// options
+// set options
 pathify.options.mapping = 'simple'
+
+// re-export
+export default pathify
