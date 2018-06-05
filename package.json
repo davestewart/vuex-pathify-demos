@@ -23,9 +23,5 @@
     "vuex",
     "pathify",
     "demo"
-  ],
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  ]
 }

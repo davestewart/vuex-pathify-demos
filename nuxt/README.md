@@ -2,11 +2,11 @@
 
 Demo to test that Pathify works correctly with Nuxt
 
-Install:
+Install and run:
 
 ```bash
 npm install
 npm run dev
 ```
 
-View on [http://localhost:3000](http://localhost:3000).
+View at [http://localhost:3000](http://localhost:3000).
