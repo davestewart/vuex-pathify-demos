@@ -1,6 +1,7 @@
-module.exports = {
+export default {
   plugins: [
-    '~/plugins/global.js',
-    '~/store/index.js',
+    '~/plugins/global',
+    '~/store/index',
   ]
 }
+

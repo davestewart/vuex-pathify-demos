@@ -9,7 +9,7 @@
     "start": "nuxt start"
   },
   "dependencies": {
-    "nuxt": "^1.4.0",
+    "nuxt": "^2.1.0",
     "vuex-pathify": "^1.0.8"
   },
   "devDependencies": {
