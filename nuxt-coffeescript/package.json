@@ -1,0 +1,24 @@
+{
+    "name": "vuex-pathify-nuxt-coffee-demo",
+    "version": "1.0.1",
+    "description": "Vuex Pathify — Nuxt Coffescript Demo",
+    "author": "Dave Stewart, Kron Austrum <huyach@protonmail.ch>",
+    "license": "MIT",
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "nuxt": "2.6.3",
+        "@nuxtjs/style-resources": "^0.1.2",
+        "coffee-loader": "^0.9.0",
+        "coffeescript": "^2.4.1",
+        "pug": "^2.0.3",
+        "pug-plain-loader": "^1.0.0",
+        "stylus": "^0.54.5",
+        "stylus-loader": "^3.0.2",
+        "vuex-pathify": "^1.2.2"
+    }
+}
