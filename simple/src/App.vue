@@ -2,10 +2,13 @@
   <div>
 
     <div id="app">
-      <img width="250" src="https://raw.githubusercontent.com/davestewart/vuex-pathify/develop/docs/assets/img/logos/logo.png">
-      <h1>{{ greeting }} {{ name }}</h1>
-      <input v-model="greeting" placeholder="Greeting">
-      <input v-model="name" placeholder="Name">
+      <img width="600" src="https://github.com/davestewart/vuex-pathify/raw/master/docs/assets/img/readme/splash-github.png">
+      <div>
+        <h1>{{ message }}</h1>
+        <input v-model="greeting" placeholder="Greeting">
+        <input v-model="name" placeholder="Name">
+        <button @click="greet">Alert</button>
+      </div>
     </div>
 
     <p class="info">
@@ -18,14 +21,24 @@
 </template>
 
 <script>
-import { sync } from 'vuex-pathify'
+import { get, sync, call } from 'vuex-pathify'
 
+/**
+ * Simple Vuex Pathify example
+ *
+ * string, object, array or wildcards format can be used for any of the helpers!
+ *
+ * - strings return single properties
+ * - object, array or wildcard return objects that need to be ...spread in
+ */
 export default {
-  name: 'App',
   computed: {
-    // @see https://davestewart.github.io/vuex-pathify/#/api/component
-    ...sync('*')
-  }
+    message: get('message'),
+    ...sync('*'),
+  },
+  methods: call([
+    'greet'
+  ])
 }
 </script>
 
@@ -55,6 +68,10 @@ input {
   border-radius: 3px;
   padding: 3px 5px;
   margin: 3px;
+}
+
+button {
+  padding: 3px 5px;
 }
 
 p.info {
