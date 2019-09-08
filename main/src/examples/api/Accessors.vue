@@ -56,7 +56,7 @@ store.copy('module/object@x.y.z')
 
     methods: {
       setData () {
-        this.$store.set('module/value', Date.now())
+        this.$store.set('module/value', Math.floor(Math.random() * 20))
       },
 
       getData () {
