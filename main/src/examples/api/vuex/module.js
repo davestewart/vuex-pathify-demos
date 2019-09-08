@@ -17,8 +17,18 @@ const state = {
       b: {
         c: 'some nested value'
       }
-    }
+    },
   },
+
+  array: [
+    'foo',
+    [
+      'bar',
+      [
+        'baz'
+      ]
+    ]
+  ],
 }
 
 const getters = {

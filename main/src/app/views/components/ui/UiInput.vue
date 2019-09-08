@@ -2,7 +2,12 @@
   <div class="field ui-input">
     <label v-if="label" class="label is-small">{{ label }}</label>
     <div class="control">
-      <input v-model="model" class="input is-small" :type="type" placeholder="Text input" v-bind="$attrs">
+      <input v-model="model"
+             class="input is-small"
+             :type="type"
+             placeholder="Text input"
+             v-bind="$attrs"
+      >
     </div>
   </div>
 </template>
