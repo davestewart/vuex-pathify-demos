@@ -18,8 +18,9 @@
       <pre>{{ module }}</pre>
 
       <p>Sync "value": <ui-input type="number" min="0" :max="module.string.length - 1" v-model.number="value"/></p>
-      <p>Sync "object.value": <ui-input v-model="sub"/></p>
-      <p>Sync "object.a.b.c": <ui-input v-model="nested"/></p>
+      <p>Sync "object@value": <ui-input v-model="sub"/></p>
+      <p>Sync "object@a.b.c": <ui-input v-model="nested"/></p>
+      <p>Sync "array@1.1.0": <ui-input v-model="array"/></p>
 
       <p>Result of getter function "substr"</p>
       <pre>{{ getter(value) }}</pre>
@@ -32,6 +33,7 @@
 
       <p>Object syntax:</p>
       <pre>{{ { altValue, altString } }} </pre>
+
     </div>
 
   </article>
@@ -54,6 +56,7 @@
       // nested property syntax
       sub: sync('module/object@value'),
       nested: sync('module/object@a.b.c'),
+      array: sync('module/array@1.1.0'),
 
       // array syntax
       ...sync('module', [

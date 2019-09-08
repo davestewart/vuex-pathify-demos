@@ -33,6 +33,12 @@
 
       <p>Sub-property wildcards:</p>
       <pre>{{ { x, y, z } }}</pre>
+
+      <p>Dynamic properties:</p>
+      <ui-select label="Property" v-model="name" :options="options" class="inline" />
+      <ui-input label="Index" v-model="index" type="number" min="0" max="2" class="inline" />
+      <ui-input label="Value" v-model="dynamicProp" class="inline" />
+      <pre>{{ dynamic }}</pre>
     </div>
 
   </article>
@@ -40,23 +46,35 @@
 </template>
 
 <script>
-  import { get } from 'vuex-pathify'
+  import { get, sync } from 'vuex-pathify'
 
   export default {
+    data () {
+      // values for dynamic properties
+      return {
+        options: ['foo', 'bar', 'baz'],
+        name: 'foo',
+        index: 0,
+      }
+    },
+
     computed: {
       // root value
-      prop      : get('value'),
+      prop        : get('value'),
 
       // module values
-      module    : get('module/string'),
-      subProp   : get('module/object@value'),
-      deepProp  : get('module/object@a.b.c'),
+      module      : get('module/string'),
+      subProp     : get('module/object@value'),
+      deepProp    : get('module/object@a.b.c'),
 
       // wildcards
       ...get('wildcards/*'), // get all properties (including getters)
-      ...get('wildcards/object@*') // get all sub-properties
+      ...get('wildcards/object@*'), // get all sub-properties
+
+      // dynamic properties
+      dynamic     :get('dynamic'),
+      dynamicProp :sync('dynamic/:name@items[:index].value'), // use [:index] or .:index
     }
   }
 
 </script>
-
