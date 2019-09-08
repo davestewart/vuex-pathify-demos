@@ -1,11 +1,12 @@
-var path = require('path')
-var webpack = require('webpack')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
+const fs = require('fs')
+const path = require('path')
+const webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
-var src = path.resolve(__dirname, './src')
-var dist = path.resolve(__dirname, './dist')
+const src = path.resolve(__dirname, './src')
+const dist = path.resolve(__dirname, './dist')
 
 function resolve (path) {
   return src + '/' + (path || '')
@@ -109,6 +110,13 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 
+// resolve source when local
+const lib = path.resolve(__dirname, '../../vuex-pathify/src/main.js')
+if (fs.existsSync(src)) {
+  module.exports.resolve.alias['vuex-pathify'] = lib
+}
+
+// production stuff
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
