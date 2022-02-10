@@ -13,7 +13,7 @@
     "vuex-pathify": "^1.0.8"
   },
   "devDependencies": {
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.0.1"
   }
 }
