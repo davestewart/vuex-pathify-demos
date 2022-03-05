@@ -15,8 +15,7 @@ const getters = {
 
 const mutations = make.mutations(state)
 
-export default {
-  namespaced: true,
+export {
   state,
   getters,
   mutations
