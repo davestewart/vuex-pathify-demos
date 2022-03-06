@@ -3,12 +3,14 @@
 
     <div id="app">
       <img width="600" src="https://github.com/davestewart/vuex-pathify/raw/master/docs/assets/img/readme/splash-github.png">
-      <div>
-        <h1>{{ message }}</h1>
-        <input v-model="greeting" placeholder="Greeting">
-        <input v-model="name" placeholder="Name">
-        <button @click="greet">Alert</button>
-      </div>
+
+      <router-view />
+
+      <nav>
+        <router-link to="/">Options</router-link>
+        <router-link to="/composition">Composition</router-link>
+        <router-link to="/setup">Setup</router-link>
+      </nav>
     </div>
 
     <p class="info">
@@ -21,29 +23,7 @@
 </template>
 
 <script>
-export default {
-  computed: {
-    message () {
-      return this.$store.getters.message
-    },
-
-    greeting: {
-      get () { return this.$store.state.greeting },
-      set (value) { this.$store.state.greeting = value },
-    },
-
-    name: {
-      get () { return this.$store.state.name },
-      set (value) { this.$store.state.name = value },
-    },
-  },
-
-  methods: {
-    greet () {
-      this.$store.dispatch('greet')
-    }
-  }
-}
+export default {}
 </script>
 
 <style>
@@ -92,5 +72,24 @@ a, a:link {
 
 a:hover {
   text-decoration: underline;
+}
+
+nav {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+nav a {
+  display: block;
+  padding: .25em .75em;
+}
+
+nav a.router-link-exact-active {
+  text-decoration: underline;
+}
+
+nav a:not(:first-child) {
+  border-left: 1px solid #EEE;
 }
 </style>
