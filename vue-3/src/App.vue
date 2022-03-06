@@ -1,85 +1,96 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-
-defineProps<{
-  msg: string
-}>()
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div>
 
-    <div class="wrapper">
-      <HelloWorld :msg="msg" />
+    <div id="app">
+      <img width="600" src="https://github.com/davestewart/vuex-pathify/raw/master/docs/assets/img/readme/splash-github.png">
+      <div>
+        <h1>{{ message }}</h1>
+        <input v-model="greeting" placeholder="Greeting">
+        <input v-model="name" placeholder="Name">
+        <button @click="greet">Alert</button>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <p class="info">
+      <a href="https://codesandbox.io/s/github/davestewart/vuex-pathify/tree/master/demo" target="_blank">feature demo</a> |
+      <a href="https://davestewart.github.io/vuex-pathify" target="_blank">documentation</a> |
+      <a href="https://github.com/davestewart/vuex-pathify" target="_blank">github</a>
+    </p>
+
+  </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    message () {
+      return this.$store.getters.message
+    },
+
+    greeting: {
+      get () { return this.$store.state.greeting },
+      set (value) { this.$store.state.greeting = value },
+    },
+
+    name: {
+      get () { return this.$store.state.name },
+      set (value) { this.$store.state.name = value },
+    },
+  },
+
+  methods: {
+    greet () {
+      this.$store.dispatch('greet')
+    }
+  }
+}
+</script>
+
 <style>
-@import './assets/base.css';
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 500px;
+}
+
+body {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  background: #FFF;
+}
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+  padding-top: 40px;
 }
 
-header {
-  line-height: 1.5;
+input {
+  border: 1px solid #EEE;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 3px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+button {
+  padding: 3px 5px;
 }
 
-a,
-.green {
+p.info {
+  position: absolute;
+  width: 100%;
+  bottom: 25px;
+  font-size: 0.8em;
+}
+
+a, a:link {
+  color: #25afaf;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+a:hover {
+  text-decoration: underline;
 }
 </style>
