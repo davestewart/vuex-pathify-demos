@@ -8,27 +8,20 @@
 </template>
 
 <script>
+import { get, sync, call } from 'vuex-pathify'
+
 export default {
   computed: {
-    message () {
-      return this.$store.getters.message
-    },
+    message: get('message', null, false),
 
-    greeting: {
-      get () { return this.$store.state.greeting },
-      set (value) { this.$store.state.greeting = value },
-    },
-
-    name: {
-      get () { return this.$store.state.name },
-      set (value) { this.$store.state.name = value },
-    },
+    ...sync([
+      'greeting',
+      'name'
+    ], null, false),
   },
 
   methods: {
-    greet () {
-      this.$store.dispatch('greet')
-    }
+    greet: call('greet'),
   }
 }
 </script>

@@ -1,13 +1,14 @@
 import { createStore } from 'vuex'
 import type { GetterTree } from 'vuex'
+import Pathify, { make } from 'vuex-pathify'
 
 // properties
-const state = {
-  greeting: 'Hello',
-  name: 'World'
+export class State {
+  greeting = 'Hello'
+  name = 'World'
 }
 
-type State = typeof state
+const state = () => new State()
 
 const getters: GetterTree<State, unknown> = {
   message (state: State) {
@@ -21,14 +22,16 @@ const actions = {
   }
 }
 
-const mutations = {
-  greeting: (state: State, value: string) => state.greeting = value,
-  name: (state: State, value: string) => state.name = value,
-}
+const mutations = make.mutations(state)
+
+Pathify.options.mapping = 'simple'
 
 export default createStore({
   state,
   getters,
   actions,
   mutations,
+  plugins: [
+    Pathify.plugin
+  ]
 })

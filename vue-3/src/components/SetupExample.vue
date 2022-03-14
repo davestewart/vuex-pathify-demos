@@ -7,23 +7,18 @@
   </div>
 </template>
 
+
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { useStore } from'vuex'
+import { get, sync, call } from 'vuex-pathify'
 
-const store = useStore()
+// get / sync single values only in setup script
+const message = get('message')
+const greeting = sync('greeting')
+const name = sync('name')
 
-const message = computed(() => store.getters.message)
-
-const greeting = computed({
-  get: (): string => store.state.greeting,
-  set: (value: string) => store.state.greeting = value
-})
-
-const name = computed({
-  get: (): string => store.state.name,
-  set: (value: string) => store.state.name = value
-})
-
-const greet = () => store.dispatch('greet')
+// dispatch
+const greet = call('greet')
 </script>
+
+
+

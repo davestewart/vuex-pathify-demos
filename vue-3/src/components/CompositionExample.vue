@@ -8,34 +8,28 @@
 </template>
 
 <script lang="ts">
-import { computed } from 'vue'
-import { useStore } from'vuex'
+import { get, sync, call } from 'vuex-pathify'
 
 export default {
   setup () {
-    const store = useStore()
+    // get / sync single values
+    const message = get('message')
 
-    const message = computed(() => store.getters.message)
+    // sync multiple values
+    const keys = [
+      'greeting',
+      'name'
+    ]
+    const arr = sync(keys)
 
-    const greeting = computed({
-      get: (): string => store.state.greeting,
-      set: (value: string) => store.state.greeting = value
-    })
-
-    const name = computed({
-      get: (): string => store.state.name,
-      set: (value: string) => store.state.name = value
-    })
-
-    const greet = () => store.dispatch('greet')
+    // dispatch
+    const greet = call('greet')
 
     return {
       message,
-      greeting,
-      name,
+      ...arr,
       greet,
     }
   }
 }
-
 </script>

@@ -11,7 +11,8 @@
   "dependencies": {
     "vue": "^3.2.31",
     "vue-router": "^4.0.13",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "vuex-pathify": "^1.5.1"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
