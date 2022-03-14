@@ -12,12 +12,12 @@
 import { get, sync, call } from 'vuex-pathify'
 
 // get / sync single values only in setup script
-const message = get('message')
-const greeting = sync('greeting')
-const name = sync('name')
+const message = get('setup/message')
+const greeting = sync('setup/greeting')
+const name = sync('setup/name')
 
 // dispatch
-const greet = call('greet')
+const greet = call('setup/greet')
 </script>
 
 
