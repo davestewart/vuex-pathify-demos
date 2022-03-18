@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { get, sync, call } from 'vuex-pathify'
 
 export default {
@@ -16,18 +16,17 @@ export default {
     const message = get('composition/message')
 
     // sync multiple values
-    const keys = [
+    const values = sync('composition', [
       'greeting',
       'name'
-    ]
-    const arr = sync('composition', keys)
+    ])
 
     // dispatch
     const greet = call('composition/greet')
 
     return {
       message,
-      ...arr,
+      ...values,
       greet,
     }
   }

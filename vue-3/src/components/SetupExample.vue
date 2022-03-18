@@ -7,14 +7,14 @@
   </div>
 </template>
 
-
-<script lang="ts" setup>
+<script setup>
 import { get, sync, call } from 'vuex-pathify'
 
-// get / sync single values only in setup script
+// get single value
 const message = get('setup/message')
-const greeting = sync('setup/greeting')
-const name = sync('setup/name')
+
+// sync multiple values
+const { name, greeting } = sync('setup/*')
 
 // dispatch
 const greet = call('setup/greet')

@@ -12,12 +12,12 @@ import { get, sync, call } from 'vuex-pathify'
 
 export default {
   computed: {
-    message: get('options/message', null, false),
+    message: get('options/message', false),
 
     ...sync('options', [
       'greeting',
       'name'
-    ], null, false),
+    ], false),
   },
 
   methods: {
