@@ -6,9 +6,15 @@
 
 This repo contains various [Vuex Pathify](https://github.com/davestewart/vuex-pathify) demos:
 
+Vue 2:
+
 - [Main demo](./main) - shows all Pathify features with several "code comparison" demos
 - [Simple demo](./simple) - a simple "Hello World" style demo with minimal code and setup
 - [Nuxt demo](./nuxt) - Pathify working in a Nuxt installation
+
+Vue 3:
+ 
+- [Vue 3](./vue-3) - Vue 3 demo
 
 Each folder is an individual demo and is entirely self-contained.
 
@@ -32,6 +38,7 @@ Each demo can be run from its own folder, or by a convenience npm command from t
 npm run main
 npm run simple
 npm run nuxt
+npm run vue3
 ```
 
 Additionally, the main and simple demos can be run on Code Sandbox:

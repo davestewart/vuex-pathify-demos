@@ -8,6 +8,7 @@
     "simple": "cd simple && npm run dev",
     "main": "cd main && npm run dev",
     "nuxt": "cd nuxt && npm run dev",
+    "vue3": "cd vue-3 && npm run dev",
     "temp": "mkdir temp && cp -R simple/src temp && cp simple/*.* temp && cd temp && npm install && npm run dev"
   },
   "main": "index.html",
