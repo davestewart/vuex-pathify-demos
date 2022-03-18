@@ -5,12 +5,12 @@ import Pathify, { make } from 'vuex-pathify'
 export class State {
   greeting = 'Hello'
   name = ''
-  constructor (name) {
+  constructor (name: string) {
     this.name = name
   }
 }
 
-function makeModule (name) {
+function makeModule (name: string) {
   const state = () => new State(name)
 
   const getters: GetterTree<State, unknown> = {
