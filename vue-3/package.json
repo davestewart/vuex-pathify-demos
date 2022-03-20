@@ -2,7 +2,7 @@
   "name": "vuex-pathify-vue3-demo",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port=8080",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",

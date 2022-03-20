@@ -18,6 +18,7 @@ export default createRouter({
     route('/', 'OptionsExample'),
     route('/setup', 'SetupExample'),
     route('/composition', 'CompositionExample'),
+    route('/dynamic', 'DynamicExample'),
 
     // 404
     route('/:route(.*)', '404')

@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import type { GetterTree } from 'vuex'
+import type { GetterTree, Module } from 'vuex'
 import Pathify, { make } from 'vuex-pathify'
 
 export class State {
@@ -10,7 +10,7 @@ export class State {
   }
 }
 
-function makeModule (name: string) {
+export function makeModule (name: string): Module<any, any> {
   const state = () => new State(name)
 
   const getters: GetterTree<State, unknown> = {

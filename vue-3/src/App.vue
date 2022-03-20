@@ -10,6 +10,7 @@
         <router-link to="/">Options</router-link>
         <router-link to="/composition">Composition</router-link>
         <router-link to="/setup">Setup</router-link>
+        <router-link to="/dynamic">Dynamic</router-link>
       </nav>
     </div>
 
